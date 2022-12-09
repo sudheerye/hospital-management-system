@@ -1,0 +1,48 @@
+<div class="col-3 bg-light text-white shadow-sm h-100">
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/dashboard/" class="text-white">Dashboard</a>
+  </div>
+  {% if request.session.role == 'admin' %}
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/doctors/" class="text-white">Doctors</a>
+  </div>
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/roles/" class="text-white">Roles</a>
+  </div>
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/patient/" class="text-white">Patients</a>
+  </div>
+
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/staff/" class="text-white">Staff</a>
+  </div>
+  {% endif %} {% if request.session.role == 'doctor' %}
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/patient/" class="text-white">Patients</a>
+  </div>
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/appointments/" class="text-white">Appointments</a>
+  </div>
+  {% endif %} {% if request.session.role == 'admin' %}
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/appointments/" class="text-white">Appointments</a>
+  </div>
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <i class="bi bi-bar-chart-fill me-3"></i>
+    <a href="/a/inventory/" class="text-white">Inventory</a>
+  </div>
+  {% endif %}
+  <div class="d-flex bg-secondary rounded-3 m-3 p-2">
+    <a href="/a/logout/" class="text-white"
+      ><i class="bi bi-door-open me-3"></i>Logout</a
+    >
+  </div>
+</div>
