@@ -549,7 +549,7 @@ def EditInventory(request, id):
 def Records(request):
     record = models.HealthRecord()
     record_id = request.POST['record_id']
-    if int(record_id):
+    if record_id and int(record_id):
         record = models.HealthRecord.objects.get(id=int(record_id))
     record.patient = models.Patient.objects.get(id=request.POST['patient'])
     record.appointment = models.Appointment.objects.get(id=request.POST['appointment'])
@@ -573,7 +573,7 @@ def Prescription(request, id):
         try:
             prescription = models.Prescription()
             prescription_id = request.POST['prescription_id']
-            if int(prescription_id):
+            if prescription_id and int(prescription_id):
                 prescription = models.Prescription.objects.get(id=int(prescription_id))
             prescription.appointment = models.Appointment.objects.get(id=id)
             prescription.name = request.POST['name']
